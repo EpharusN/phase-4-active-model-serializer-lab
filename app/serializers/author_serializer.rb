@@ -1,3 +1,5 @@
 class AuthorSerializer < ActiveModel::Serializer
-  attributes :username, :email, :bio, :avatar_url
+  attributes :name
+  has_many :posts, serializer: PostSerializer
+  has_one :profile, serializer: ProfileSerializer
 end
